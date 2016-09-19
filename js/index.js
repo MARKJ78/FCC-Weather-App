@@ -156,7 +156,7 @@ $(document).ready(function() {
 ///USE DATA FROM API REQUEST TO POPULATE PAGE
 
 function populate(response) {
-  /*console.log(response);*/
+  console.log(response);
 
   //the following just to use custom icons :/
   //SELECT ICON BASED ON COVERTED TIME BOOLIAN///////////////////////////////////////////////////////
