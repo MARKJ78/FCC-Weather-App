@@ -105,6 +105,7 @@ $(document).ready(function() {
         break;
     }
   }
+  
   //Get json data by search or location means and send for call page fill
   function fetch(location) {
     var jsonURL = "https://api.apixu.com/v1/forecast.json?key=ca0c16d6a3bf407d9cb223846161809&days=6&q=";
