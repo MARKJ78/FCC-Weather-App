@@ -61,7 +61,7 @@ $(document).ready(function() {
   //Location error handling - check which error, log the error and call weather api with IP address as an argument. warn user about accuracy.
   function geoError(error) {
     var warning = document.getElementById("warning");
-    var jsonURL = "https://api.apixu.com/v1/forecast.json?key=e6ca055ff86541638d291327161909&days=6&q=";
+    var jsonURL = "https://api.apixu.com/v1/forecast.json?key=f936301bb5a54d8c91492335161909&days=6&q=";
     switch (error.code) {
       case error.PERMISSION_DENIED:
         console.log("PERMISSION_DENIED - enable device location services or enable https://");
@@ -107,14 +107,14 @@ $(document).ready(function() {
   }
   //Get json data by search or location means and send for call page fill
   function fetch(location) {
-    var jsonURL = "https://api.apixu.com/v1/forecast.json?key=e6ca055ff86541638d291327161909&days=6&q=";
-    var jsonSearchURL = "https://api.apixu.com/v1/search.json?key=e6ca055ff86541638d291327161909&q=";
+    var jsonURL = "https://api.apixu.com/v1/forecast.json?key=f936301bb5a54d8c91492335161909&days=6&q=";
+    var jsonSearchURL = "https://api.apixu.com/v1/search.json?key=f936301bb5a54d8c91492335161909&q=";
     var warning = document.getElementById("warning");
     var term = $('#searchTerm').val();
     if (term === '') {
       var lats = location.coords.latitude;
       var longs = location.coords.longitude;
-      var accuracy = location.coords.accuracy;
+      var accuracy = location.coords.accuracy;      
       //build API key
       $.getJSON(jsonURL + lats + "," + longs, function(gotByGeo) {
         populate(gotByGeo);
