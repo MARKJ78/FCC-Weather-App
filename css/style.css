@@ -15,10 +15,10 @@ h3 {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
+  flex-flow: row wrap;
   -webkit-box-pack: start;
   -ms-flex-pack: start;
-          justify-content: flex-start;
+  justify-content: flex-start;
   background-color: #739f3d;
   font-size: 1rem;
   font-weight: 500;
@@ -40,7 +40,7 @@ h3 {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-line-pack: center;
-          align-content: center;
+  align-content: center;
   border: 1px solid #fcfdfe;
   background-color: #739f3d;
   height: 4.3rem;
@@ -283,7 +283,7 @@ h3 {
   #warning {
     -webkit-box-flex: 5%;
     -ms-flex: 5%;
-            flex: 1 5%;
+    flex: 1 5%;
     -webkit-box-ordinal-group: 6;
         -ms-flex-order: 5;
             order: 5;
@@ -373,11 +373,12 @@ h3 {
   margin: auto;
   -webkit-box-align: center;
       -ms-flex-align: center;
-          -ms-grid-row-align: center;
-      align-items: center;
+              -ms-grid-row-align: center;
+          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  position: relative;
 }
 
 .lower {
@@ -402,6 +403,11 @@ h3 {
   border-left: 2px solid #f69454;
   height: 10.5rem;
 }
+@media screen and (max-width: 40rem;){
+  lower {
+    min-height: 10.5rem;
+  }
+}
 
 .main {
   font-size: 3rem;
@@ -409,6 +415,7 @@ h3 {
   position: relative;
   margin: 0.25rem;
 }
+
 .weather .main {
   margin: .5rem;
 }
@@ -418,7 +425,7 @@ h3 {
   /*because degrees symbol makes it look missaligned*/
 }
 
-.weather-main-text{
+.weather-main-text {
   font-size: 1.4rem;
   padding: .5rem;
 }
@@ -577,6 +584,14 @@ h3 {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
+@media screen and (-ms-high-contrast: none) {
+  .forecast-panel{
+    height: 20.5rem;
+  }
+  
+}
+
+
 .fSub1 {
   background-color: #739f3d;
   color: #fcfdfe;
@@ -587,8 +602,8 @@ h3 {
   padding-top: .75rem;
   -webkit-box-align: center;
       -ms-flex-align: center;
-          -ms-grid-row-align: center;
-      align-items: center;
+              -ms-grid-row-align: center;
+          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -660,16 +675,14 @@ h3 {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
   width: 100%;
 }
-
-
 
 .bottom-nav {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
 
 .nav-item {
@@ -683,7 +696,6 @@ h3 {
   font-size: 1.1rem;
   text-decoration: none;
   opacity: 1;
-  
 }
 
 .nav-item a:hover {

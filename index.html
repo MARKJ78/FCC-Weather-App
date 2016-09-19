@@ -5,12 +5,7 @@
     <title>FCC Local Weather App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
-
-<!--<script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBY_GdF-Y0PGDs6navN3K00aZFUUQbOAYs">
-    </script>-->
-    
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">  
     <link rel="stylesheet" href="css/normalize.css">
     <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css'>
     <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons-wind.min.css'>
@@ -19,138 +14,140 @@
   </head>
   <body>
    <section>
-    <div id="fetch">
-      <div id="warning" class="menu-item"></div>
-      <input class="menu-item" type="text" placeholder="eg: City, Country / Post Code" id="searchTerm" />
-      <button class="menu-item" id="search">Go</button>
-      <button id="locate"><i class="fa fa-map-marker fa-2x" aria-hidden="true"></i></button>
-      <div class="toggle-container">
-        <div id="temp-toggle" class="units-toggle units-toggle-on">
-          <button id="temperature-button">&#176;C</button>
-        </div>
-        <div id="speed-toggle" class="units-toggle units-toggle-on">
-          <button id="speed-button">MPH</button>
+  <div id="fetch">
+    <div id="warning" class="menu-item"></div>
+    <input class="menu-item" type="text" placeholder="eg: City, Country / Post Code" id="searchTerm" />
+    <button class="menu-item" id="search">Go</button>
+    <button id="locate"><i class="fa fa-map-marker fa-2x" aria-hidden="true"></i></button>
+
+    <div class="toggle-container">
+
+      <div id="temp-toggle" class="units-toggle units-toggle-on">
+        <button id="temperature-button">&#176;C</button>
+      </div>
+
+      <div id="speed-toggle" class="units-toggle units-toggle-on">
+        <button id="speed-button">MPH</button>
+      </div>
+
+    </div>
+
+    <button class="menu-item" id="more"><p><i id="rotateDown" class="fa fa-level-down fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;+ 5 Days</p></button>
+  </div>
+  <div class="forecast-container">
+    <h3 class="forecast-title title"></h3>
+    <div class="forcast-flex-container">
+
+      <div class="forecast-panel" id="1">
+        <div class="fSub1"></div>
+        <div class="forcastSub fSubIcon"></div>
+        <div class="forecast-lower">
+          <div class="forcastSub fSub2"></div>
+          <div class="forcastSub fSub3"></div>
+          <div class="forcastSub fSub4"></div>
         </div>
       </div>
-      <button class="menu-item" id="more"><p><i id="rotateDown" class="fa fa-level-down fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;+ 5 Days</p></button>
-    </div>
-    <div class="forecast-container">
-      <h3 class="forecast-title title"></h3>
-      <div class="forcast-flex-container">
-        <div class="forecast-panel" id="1">
-          <div class="fSub1"></div>
-          <div class="forcastSub fSubIcon"></div>
-          <div class="forecast-lower">
-            <div class="forcastSub fSub2"></div>
-            <div class="forcastSub fSub3"></div>
-            <div class="forcastSub fSub4"></div>
-          </div>
+
+      <div class="forecast-panel" id="2">
+        <div class="fSub1"></div>
+        <div class="forcastSub fSubIcon"></div>
+        <div class="forecast-lower">
+          <div class="forcastSub fSub2"></div>
+          <div class="forcastSub fSub3"></div>
+          <div class="forcastSub fSub4"></div>
         </div>
-        <div class="forecast-panel" id="2">
-          <div class="fSub1"></div>
-          <div class="forcastSub fSubIcon"></div>
-          <div class="forecast-lower">
-            <div class="forcastSub fSub2"></div>
-            <div class="forcastSub fSub3"></div>
-            <div class="forcastSub fSub4"></div>
-          </div>
+      </div>
+
+      <div class="forecast-panel" id="3">
+        <div class="fSub1"></div>
+        <div class="forcastSub fSubIcon"></div>
+        <div class="forecast-lower">
+          <div class="forcastSub fSub2"></div>
+          <div class="forcastSub fSub3"></div>
+          <div class="forcastSub fSub4"></div>
         </div>
-        <div class="forecast-panel" id="3">
-          <div class="fSub1"></div>
-          <div class="forcastSub fSubIcon"></div>
-          <div class="forecast-lower">
-            <div class="forcastSub fSub2"></div>
-            <div class="forcastSub fSub3"></div>
-            <div class="forcastSub fSub4"></div>
-          </div>
+      </div>
+
+      <div class="forecast-panel" id="4">
+        <div class="fSub1"></div>
+        <div class="forcastSub fSubIcon"></div>
+        <div class="forecast-lower">
+          <div class="forcastSub fSub2"></div>
+          <div class="forcastSub fSub3"></div>
+          <div class="forcastSub fSub4"></div>
         </div>
-        <div class="forecast-panel" id="4">
-          <div class="fSub1"></div>
-          <div class="forcastSub fSubIcon"></div>
-          <div class="forecast-lower">
-            <div class="forcastSub fSub2"></div>
-            <div class="forcastSub fSub3"></div>
-            <div class="forcastSub fSub4"></div>
-          </div>
-        </div>
-        <div class="forecast-panel" id="5">
-          <div class="fSub1"></div>
-          <div class="forcastSub fSubIcon"></div>
-          <div class="forecast-lower">
-            <div class="forcastSub fSub2"></div>
-            <div class="forcastSub fSub3"></div>
-            <div class="forcastSub fSub4"></div>
-          </div>
+      </div>
+
+      <div class="forecast-panel" id="5">
+        <div class="fSub1"></div>
+        <div class="forcastSub fSubIcon"></div>
+        <div class="forecast-lower">
+          <div class="forcastSub fSub2"></div>
+          <div class="forcastSub fSub3"></div>
+          <div class="forcastSub fSub4"></div>
         </div>
       </div>
     </div>
-  </section>
-  <section>
-    <div class="weather-container">
-      <h3 class="current-title title"></h3>
-      <div class="weather panel"> 
-        <div class="upper">
-           <div class="top">Now</div>
-            <div class="main"></div>
+  </div>
+</section>
+<section>
+
+  <div class="weather-container">
+    <h3 class="current-title title"></h3>
+    <div class="weather panel">
+      <div class="upper">
+        <div class="top">Now</div>
+        <div class="main"></div>
+        <div class="bottom"></div>
+      </div>
+      <div class="lower">
+        <div class="sub sub1">
+        </div>
+        <div class="sub sub2">
+        </div>
+        <div class="sub sub3">
+        </div>
+      </div>
+    </div>
+
+    <div class="temp panel">
+      <div class="upper">
+        <div class="sub main"></div>
+      </div>
+      <div class="lower">
+        <div class="sub sub1"></div>
+        <div class="sub sub2"></div>
+      </div>
+    </div>
+
+    <div class="wind panel">
+      <div id="windMap" class="upper">
+        <div class="sub main wind">
+          <i id="windArrow" class="wi wi-wind towards-0-deg"></i>
+        </div>
+      </div>
+      <div class="lower">
+        <div class="sub sub1"></div>
+        <div class="sub sub2"></div>
+      </div>
+    </div>
+
+    <div class="date panel">
+      <div class="upper">
+        <div class="sub main">
+          <div class="top"></div>
+          <div class="main day"></div>
           <div class="bottom"></div>
         </div>
-        <div class="lower"> 
-          <div class="sub sub1">
-          </div>
-          <div class="sub sub2">
-          </div>
-          <div class="sub sub3">
-          </div>
-        </div>
       </div>
-
-      <!-- <div class="main-panel">
-        <div class="location">
-          <h3>Current Weather</h3>
-             <ul>
-            <li id="currentLoc"></li>
-            <li id="latitude"></li>
-            <li id="longitude"></li>
-          </ul>
-        </div>
-      </div>-->
-
-      <div class="temp panel">
-        <div class="upper">
-          <div class="sub main"></div>
-        </div>
-        <div class="lower">
-          <div class="sub sub1"></div>
-          <div class="sub sub2"></div>
-        </div>
-      </div>
-      <div class="wind panel">
-        <div class="upper">
-          <div class="sub main">
-            <div id="windArrow">
-              <i class="wi wi-wind towards-0-deg"></i></div>
-          </div>
-        </div>
-        <div class="lower">
-          <div class="sub sub1"></div>
-          <div class="sub sub2"></div>
-        </div>
-      </div>
-      <div class="date panel">
-        <div class="upper">
-          <div class="sub main">
-            <div class="top"></div>
-            <div class="main day"></div>
-            <div class="bottom"></div>
-          </div>
-        </div>
-        <div class="lower">
-          <div class="sub sub1"></div>
-          <div class="sub sub2"></div>
-        </div>
+      <div class="lower">
+        <div class="sub sub1"></div>
+        <div class="sub sub2"></div>
       </div>
     </div>
-  </section>
+  </div>
+
+</section>
     <ul class="bottom-nav bottom-container">
       <li class="nav-item"><a href="https://markj78.github.io/Portfolio/" target="_blank"><i class="fa fa-arrow-circle-o-left fa-lg" aria-hidden="true"></i>&nbsp; More toys </a></li>
       <!--<p class="withLove">Made with&nbsp; <i class="fa fa-heart-o" aria-hidden="true"></i></p>-->
