@@ -60,7 +60,7 @@ $(document).ready(function() {
   //Location error handling - check which error, log the error and call weather api with IP address as an argument. warn user about accuracy.
   function geoError(error) {
     var warning = document.getElementById("warning");
-    var jsonURL = "https://api.apixu.com/v1/forecast.json?key=fc6bb05b0ce34e288af213317161709&days=6&q=";
+    var jsonURL = "https://api.apixu.com/v1/forecast.json?key=dc7b8e01492b4613a4d85712161909&days=6&q=";
     switch (error.code) {
       case error.PERMISSION_DENIED:
         console.log("PERMISSION_DENIED - enable device location services or enable https://");
@@ -106,8 +106,8 @@ $(document).ready(function() {
   }
   //Get json data by search or location means and send for call page fill
   function fetch(location) {
-    var jsonURL = "https://api.apixu.com/v1/forecast.json?key=fc6bb05b0ce34e288af213317161709&days=6&q=";
-    var jsonSearchURL = "https://api.apixu.com/v1/search.json?key=fc6bb05b0ce34e288af213317161709&q=";
+    var jsonURL = "https://api.apixu.com/v1/forecast.json?key=dc7b8e01492b4613a4d85712161909&days=6&q=";
+    var jsonSearchURL = "https://api.apixu.com/v1/search.json?key=dc7b8e01492b4613a4d85712161909&q=";
     var warning = document.getElementById("warning");
     var term = $('#searchTerm').val();
     if (term === '') {
