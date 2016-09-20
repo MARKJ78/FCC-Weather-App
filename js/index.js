@@ -21,7 +21,9 @@ $(document).ready(function() {
     $('h3, .main, .sub, .forcastSub').fadeOut('fast');
     testDevice(); ////invoke fetch
     $('h3, .main, .sub, .forcastSub').fadeIn('slow');
-    $('#warning').css({'display': 'none'});
+    $('#warning').css({
+      'display': 'none'
+    });
   });
   //go button search
   $('#search').click(function() {
@@ -104,7 +106,7 @@ $(document).ready(function() {
         break;
     }
   }
- 
+
   //Get json data by search or location means and send for call page fill
   function fetch(location) {
     var jsonURL = "https://api.apixu.com/v1/forecast.json?key=ca0c16d6a3bf407d9cb223846161809&days=6&q=";
@@ -392,7 +394,7 @@ function populate(response) {
     'transform': 'rotate(' + (icon_dir[direction]) + 'deg)'
   });
   $('.wind .sub1').html("<i class='wi wi-strong-wind'></i>" + " " + response.current.wind_dir);
-  $('.wind .sub2').html(response.current.wind_mph + " MPH");
+  $('.wind .sub2').html(Math.floor(response.current.wind_mph + " MPH"));
 
   //POPULATE FORECAST PANELS/////////////////////////////////////////////////////////////////    
   //Populate current weather title//////////////////////////////////////////////////////////////////////////////////////
@@ -477,7 +479,7 @@ function populate(response) {
       $('#5 .fSub4').html("<i class='wi wi-strong-wind'></i>" + " " + Math.floor(response.forecast.forecastday[5].day.maxwind_mph) + " MPH");
     } else {
       SPbutton.innerHTML = "KPH";
-      $('.wind .sub2').html(Math.floor(response.current.wind_kph + " KPH"));
+      $('.wind .sub2').html(Math.floor(response.current.wind_kph) + " KPH");
       $('#1 .fSub4').html("<i class='wi wi-strong-wind'></i>" + " " + Math.floor(response.forecast.forecastday[1].day.maxwind_kph) + " KPH");
       $('#2 .fSub4').html("<i class='wi wi-strong-wind'></i>" + " " + Math.floor(response.forecast.forecastday[2].day.maxwind_kph) + " KPH");
       $('#3 .fSub4').html("<i class='wi wi-strong-wind'></i>" + " " + Math.floor(response.forecast.forecastday[3].day.maxwind_kph) + " KPH");
