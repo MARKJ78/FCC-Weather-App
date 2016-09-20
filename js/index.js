@@ -366,9 +366,9 @@ function populate(response) {
   $('.date .sub2').html("<i class='wi wi-sunset'></i>" + " " + response.forecast.forecastday[0].astro.sunset);
 
   //CURRENT TEMPERATURE POPULATE
-  $('.temp .main').html(response.current.temp_c + '<span class="degs">&#176;C<span>');
-  $('.temp .sub1').html("<i class='wi wi-direction-down'></i>" + " " + Math.floor(response.forecast.forecastday[0].day.mintemp_c) + "&#176;C");
-  $('.temp .sub2').html("<i class='wi wi-direction-up'></i>" + " " + Math.floor(response.forecast.forecastday[0].day.maxtemp_c) + "&#176;C");
+  $('.temp .main').html(Math.floor(response.current.temp_c) + '<span class="degs">&#176;C<span>');
+  $('.temp .sub1').html("<i class='wi wi-direction-down'></i>" + " " + Math.floor(response.forecast.forecastday[0].day.mintemp_c) + "&#176;c");
+  $('.temp .sub2').html("<i class='wi wi-direction-up'></i>" + " " + Math.floor(response.forecast.forecastday[0].day.maxtemp_c) + "&#176;c");
   //CURRENT WIND POPULATE, ROTATE ICON FOR WIND DIRECTION
   var direction = response.current.wind_dir;
   var icon_dir = new Array();
@@ -477,7 +477,7 @@ function populate(response) {
       $('#5 .fSub4').html("<i class='wi wi-strong-wind'></i>" + " " + Math.floor(response.forecast.forecastday[5].day.maxwind_mph) + " MPH");
     } else {
       SPbutton.innerHTML = "KPH";
-      $('.wind .sub2').html(response.current.wind_kph + " KPH");
+      $('.wind .sub2').html(Math.floor(response.current.wind_kph + " KPH"));
       $('#1 .fSub4').html("<i class='wi wi-strong-wind'></i>" + " " + Math.floor(response.forecast.forecastday[1].day.maxwind_kph) + " KPH");
       $('#2 .fSub4').html("<i class='wi wi-strong-wind'></i>" + " " + Math.floor(response.forecast.forecastday[2].day.maxwind_kph) + " KPH");
       $('#3 .fSub4').html("<i class='wi wi-strong-wind'></i>" + " " + Math.floor(response.forecast.forecastday[3].day.maxwind_kph) + " KPH");
