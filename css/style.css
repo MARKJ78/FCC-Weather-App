@@ -404,9 +404,9 @@ h3 {
   border-left: 2px solid #f69454;
   height: 10.5rem;
 }
-@media screen and (max-width: 40rem;){
-  lower {
-    min-height: 10.5rem;
+@media screen and (max-width: 40rem){
+  .lower {
+    min-height: 100%;
   }
 }
 
@@ -512,7 +512,6 @@ h3 {
             flex-direction: row;
     border: none;
     border-top: 2px solid #f69454;
-    height: auto;
   }
   .sub1 {
     -webkit-box-flex: 1;
