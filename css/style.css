@@ -3,6 +3,7 @@ body {
     text-align: center;
     font-family: 'Lato', sans-serif;
     position: relative;
+    min-height: 101vh;
 }
 
 h3 {
