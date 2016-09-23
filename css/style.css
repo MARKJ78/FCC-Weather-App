@@ -406,7 +406,7 @@ h3 {
     height: 10.5rem;
 }
 
-@media screen and (max-width: 40rem) {
+@media screen and (max-width: 39.9rem) {
     .lower {
         min-height: 100%;
     }
