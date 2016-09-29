@@ -334,33 +334,9 @@ function populate(response) {
     var monthNum = dateObj.getMonth();
     var day = dateObj.getDate();
     var hour = dateObj.getHours();
-    var month = new Array();
-    month[0] = "January";
-    month[1] = "February";
-    month[2] = "March";
-    month[3] = "April";
-    month[4] = "May";
-    month[5] = "June";
-    month[6] = "July";
-    month[7] = "August";
-    month[8] = "September";
-    month[9] = "October";
-    month[10] = "November";
-    month[11] = "December";
+    var month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     var d = dateObj.getDay();
-    var forecastDay = new Array();
-    forecastDay[0] = "Sunday";
-    forecastDay[1] = "Monday";
-    forecastDay[2] = "Tuesday";
-    forecastDay[3] = "Wednesday";
-    forecastDay[4] = "Thursday";
-    forecastDay[5] = "Friday";
-    forecastDay[6] = "Saturday";
-    forecastDay[7] = "Sunday";
-    forecastDay[8] = "Monday";
-    forecastDay[9] = "Tuesday";
-    forecastDay[10] = "Wednesday";
-    forecastDay[11] = "Thursday";
+    var forecastDay = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"];
     $('.date .top').html(forecastDay[d]);
     $('.date .day').html(day);
     $('.main .bottom').html(month[monthNum]);
@@ -373,7 +349,7 @@ function populate(response) {
     $('.temp .sub2').html("<i class='wi wi-direction-up'></i>" + " " + Math.floor(response.forecast.forecastday[0].day.maxtemp_c) + "&#176;c");
     //CURRENT WIND POPULATE, ROTATE ICON FOR WIND DIRECTION
     var direction = response.current.wind_dir;
-    var icon_dir = new Array();
+    /*var icon_dir = new Array();
     icon_dir["N"] = 0;
     icon_dir["NNE"] = 22;
     icon_dir["NE"] = 45;
@@ -389,7 +365,25 @@ function populate(response) {
     icon_dir["W"] = 270;
     icon_dir["WNW"] = 292;
     icon_dir["NW"] = 315;
-    icon_dir["NNW"] = 337;
+    icon_dir["NNW"] = 337;*/
+    var icon_dir = {
+        "N": 0,
+        "NNE": 22,
+        "NE": 45,
+        "ENE": 67,
+        "E": 90,
+        "ESE": 112,
+        "SE": 135,
+        "SSE": 157,
+        "S": 180,
+        "SSW": 202,
+        "SW": 225,
+        "WSW": 247,
+        "W": 270,
+        "WNW": 292,
+        "NW": 315,
+        "NNW": 337
+    };
     $('#windArrow').css({
         'transform': 'rotate(' + (icon_dir[direction]) + 'deg)'
     });
