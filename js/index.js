@@ -349,23 +349,6 @@ function populate(response) {
     $('.temp .sub2').html("<i class='wi wi-direction-up'></i>" + " " + Math.floor(response.forecast.forecastday[0].day.maxtemp_c) + "&#176;c");
     //CURRENT WIND POPULATE, ROTATE ICON FOR WIND DIRECTION
     var direction = response.current.wind_dir;
-    /*var icon_dir = new Array();
-    icon_dir["N"] = 0;
-    icon_dir["NNE"] = 22;
-    icon_dir["NE"] = 45;
-    icon_dir["ENE"] = 67;
-    icon_dir["E"] = 90;
-    icon_dir["ESE"] = 112;
-    icon_dir["SE"] = 135;
-    icon_dir["SSE"] = 157;
-    icon_dir["S"] = 180;
-    icon_dir["SSW"] = 202;
-    icon_dir["SW"] = 225;
-    icon_dir["WSW"] = 247;
-    icon_dir["W"] = 270;
-    icon_dir["WNW"] = 292;
-    icon_dir["NW"] = 315;
-    icon_dir["NNW"] = 337;*/
     var icon_dir = {
         "N": 0,
         "NNE": 22,
