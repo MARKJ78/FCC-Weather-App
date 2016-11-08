@@ -169,7 +169,7 @@ $(document).ready(function() {
 ///USE DATA FROM API REQUEST TO POPULATE PAGE
 
 function populate(response) {
-    /*console.log(response);*/
+    console.log(response);
     console.log('Data recieved, Populating Page');
     //the following just to use custom icons :/
     //SELECT ICON BASED ON COVERTED TIME BOOLIAN///////////////////////////////////////////////////////
@@ -232,6 +232,7 @@ function populate(response) {
                     icon = 'wi-night-alt-sprinkle';
                 }
                 break;
+            case 1150:
             case 1072:
             case 1153:
             case 1168:
