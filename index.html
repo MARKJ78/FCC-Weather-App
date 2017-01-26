@@ -6,13 +6,13 @@
     <title>FCC Local Weather App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css">
-    <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons-wind.min.css">
-    <link rel="stylesheet prefetch" href="https://cdn.jsdelivr.net/entypo-fontello/0.1/entypo.css">
-    <link rel="stylesheet" href="css/style.css">
-
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1"
+        crossorigin="anonymous">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css">
+        <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons-wind.min.css">
+        <link rel="stylesheet prefetch" href="https://cdn.jsdelivr.net/entypo-fontello/0.1/entypo.css">
+        <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -22,25 +22,19 @@
             <input class="menu-item" type="text" placeholder="eg: City, Country / Post Code" id="searchTerm" />
             <button class="menu-item" id="search">Go</button>
             <button id="locate"><i class="fa fa-map-marker fa-2x" aria-hidden="true"></i></button>
-
             <div class="toggle-container">
-
                 <div id="temp-toggle" class="units-toggle units-toggle-on">
                     <button id="temperature-button">&#176;C</button>
                 </div>
-
                 <div id="speed-toggle" class="units-toggle units-toggle-on">
                     <button id="speed-button">MPH</button>
                 </div>
-
             </div>
-
             <button class="menu-item" id="more"><p><i id="rotateDown" class="fa fa-level-down fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;+ 5 Days</p></button>
         </div>
         <div class="forecast-container">
             <h3 class="forecast-title title"></h3>
             <div class="forcast-flex-container">
-
                 <div class="forecast-panel" id="1">
                     <div class="fSub1"></div>
                     <div class="forcastSub fSubIcon"></div>
@@ -50,7 +44,6 @@
                         <div class="forcastSub fSub4"></div>
                     </div>
                 </div>
-
                 <div class="forecast-panel" id="2">
                     <div class="fSub1"></div>
                     <div class="forcastSub fSubIcon"></div>
@@ -60,7 +53,6 @@
                         <div class="forcastSub fSub4"></div>
                     </div>
                 </div>
-
                 <div class="forecast-panel" id="3">
                     <div class="fSub1"></div>
                     <div class="forcastSub fSubIcon"></div>
@@ -70,7 +62,6 @@
                         <div class="forcastSub fSub4"></div>
                     </div>
                 </div>
-
                 <div class="forecast-panel" id="4">
                     <div class="fSub1"></div>
                     <div class="forcastSub fSubIcon"></div>
@@ -80,7 +71,6 @@
                         <div class="forcastSub fSub4"></div>
                     </div>
                 </div>
-
                 <div class="forecast-panel" id="5">
                     <div class="fSub1"></div>
                     <div class="forcastSub fSubIcon"></div>
@@ -94,7 +84,6 @@
         </div>
     </section>
     <section>
-
         <div class="weather-container">
             <h3 class="current-title title"></h3>
             <div class="weather panel">
@@ -112,7 +101,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="temp panel">
                 <div class="upper">
                     <div class="sub main"></div>
@@ -122,7 +110,6 @@
                     <div class="sub sub2"></div>
                 </div>
             </div>
-
             <div class="wind panel">
                 <div id="windMap" class="upper">
                     <div class="sub main wind">
@@ -134,7 +121,6 @@
                     <div class="sub sub2"></div>
                 </div>
             </div>
-
             <div class="date panel">
                 <div class="upper">
                     <div class="sub main">
@@ -151,11 +137,11 @@
         </div>
     </section>
     <ul class="bottom-nav bottom-container">
-        <li class="nav-item"><a href="https://markj78.github.io" target="_blank"><i class="fa fa-arrow-circle-o-left fa-lg" aria-hidden="true"></i>&nbsp; More toys </a></li>
+        <li class="nav-item"><a href="http://mark-jones.surge.sh/" target="_blank"><i class="fa fa-arrow-circle-o-left fa-lg" aria-hidden="true"></i>&nbsp; More toys </a></li>
         <!--<p class="withLove">Made with&nbsp; <i class="fa fa-heart-o" aria-hidden="true"></i></p>-->
         <li class="nav-item"><a href="https://github.com/MARKJ78/FCC-Weather-App" target="_blank">Visit Repo&nbsp; <i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
     </ul>
-       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
     <script async defer src="js/main.js"></script>
 </body>
 
