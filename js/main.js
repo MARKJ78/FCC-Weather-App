@@ -173,7 +173,7 @@ function populate(response) {
     console.log('Data recieved, Populating Page');
     var currentWeatherMb = response.current.pressure_mb;
     var currentWeatherHumidity = response.current.humidity; 
-    var currentWeatherVis = response..current.vis_miles;
+    var currentWeatherVis = response.current.vis_miles;
     //the following just to use custom icons :/
     //SELECT ICON BASED ON COVERTED TIME BOOLIAN///////////////////////////////////////////////////////
     var currentWeatherIcon = getIcon(response.current.condition.code, false);
