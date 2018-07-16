@@ -173,7 +173,7 @@ function populate(response) {
     console.log('Data recieved, Populating Page');
     var currentWeatherUv = response.forecast.forecastday[0].day.uv;
     var currentWeatherHumidity = response.forecast.forecastday[0].day.avghumidity;
-    var currentWeatherPrecmm = getIcon(response.forecast.forecastday[0].day.totalprecip_mm;
+    var currentWeatherPrecmm = response.forecast.forecastday[0].day.totalprecip_mm;
     //the following just to use custom icons :/
     //SELECT ICON BASED ON COVERTED TIME BOOLIAN///////////////////////////////////////////////////////
     var currentWeatherIcon = getIcon(response.current.condition.code, false);
