@@ -399,42 +399,42 @@ function populate(response) {
     $('.forecast-title').html("<h3>Next 5 Days" + " for " + response.location.name + "</h3>");
     //PANELS
     getForecastDate(1);
-    console.log(dateObj);
+    //console.log(dateObj);
     $('#1 .fSub1').html('<h3>' + (forecastDay[d]) + "<br/>" + (month[monthNum]) + "<br/>" + [day] + '</h3>');
     $('#1 .fSubIcon').html('<i class="wi ' + forecastWeatherIcon1 + '"></i>');
     $('#1 .fSub2').html(response.forecast.forecastday[1].day.condition.text);
     $('#1 .fSub3').html("<i class='wi wi-thermometer'></i>" + " " + Math.floor(response.forecast.forecastday[1].day.maxtemp_c) + "&#176;C");
     $('#1 .fSub4').html("<i class='wi wi-strong-wind'></i>" + " " + Math.floor(response.forecast.forecastday[1].day.maxwind_mph) + "MPH");
     getForecastDate(1);
-    console.log(dateObj);
+    //console.log(dateObj);
     $('#2 .fSub1').html('<h3>' + (forecastDay[d]) + "<br/>" + (month[monthNum]) + "<br/>" + [day] + '</h3>');
     $('#2 .fSubIcon').html('<i class="wi ' + forecastWeatherIcon2 + '"></i>');
     $('#2 .fSub2').html(response.forecast.forecastday[2].day.condition.text);
     $('#2 .fSub3').html("<i class='wi wi-thermometer'></i>" + " " + Math.floor(response.forecast.forecastday[2].day.maxtemp_c) + "&#176;C");
     $('#2 .fSub4').html("<i class='wi wi-strong-wind'></i>" + " " + Math.floor(response.forecast.forecastday[2].day.maxwind_mph) + "MPH");
     getForecastDate(1);
-    console.log(dateObj);
+    //console.log(dateObj);
     $('#3 .fSub1').html('<h3>' + (forecastDay[d]) + "<br/>" + (month[monthNum]) + "<br/>" + [day] + '</h3>');
     $('#3 .fSubIcon').html('<i class="wi ' + forecastWeatherIcon3 + '"></i>');
     $('#3 .fSub2').html(response.forecast.forecastday[3].day.condition.text);
     $('#3 .fSub3').html("<i class='wi wi-thermometer'></i>" + " " + Math.floor(response.forecast.forecastday[3].day.maxtemp_c) + "&#176;C");
     $('#3 .fSub4').html("<i class='wi wi-strong-wind'></i>" + " " + Math.floor(response.forecast.forecastday[3].day.maxwind_mph) + "MPH");
     getForecastDate(1);
-    console.log(dateObj);
+    //console.log(dateObj);
     $('#4 .fSub1').html('<h3>' + (forecastDay[d]) + "<br/>" + (month[monthNum]) + "<br/>" + [day] + '</h3>');
     $('#4 .fSubIcon').html('<i class="wi ' + forecastWeatherIcon4 + '"></i>');
     $('#4 .fSub2').html(response.forecast.forecastday[4].day.condition.text);
     $('#4 .fSub3').html("<i class='wi wi-thermometer'></i>" + " " + Math.floor(response.forecast.forecastday[4].day.maxtemp_c) + "&#176;C");
     $('#4 .fSub4').html("<i class='wi wi-strong-wind'></i>" + " " + Math.floor(response.forecast.forecastday[4].day.maxwind_mph) + "MPH");
     getForecastDate(1);
-    console.log(dateObj);
+    //console.log(dateObj);
     $('#5 .fSub1').html('<h3>' + (forecastDay[d]) + "<br/>" + (month[monthNum]) + "<br/>" + [day] + '</h3>');
     $('#5 .fSubIcon').html('<i class="wi ' + forecastWeatherIcon5 + '"></i>');
     $('#5 .fSub2').html(response.forecast.forecastday[5].day.condition.text);
     $('#5 .fSub3').html("<i class='wi wi-thermometer'></i>" + " " + Math.floor(response.forecast.forecastday[5].day.maxtemp_c) + "&#176;C");
     $('#5 .fSub4').html("<i class='wi wi-strong-wind'></i>" + " " + Math.floor(response.forecast.forecastday[5].day.maxwind_mph) + "MPH");
     dateObj = new Date();
-    console.log(dateObj);
+    //console.log(dateObj);
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     //                                                                                                  //
     //                                                                                                  //
