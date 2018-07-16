@@ -336,11 +336,9 @@ function populate(response) {
     //Populate Current weather panel//////////////////////////////////////////////////////////////////////
     $('.weather .upper .bottom').html(response.current.condition.text);
     $('.weather .upper .main').html('<i class="wi ' + currentWeatherIcon + '"></i>');
-    $('.weather .sub1').html('UV' + '&nbsp;&nbsp;' + '<i class="wi ' + currentWeatherUv + '"></i>');
-    $('.weather .sub2').html('Humidity' + '&nbsp;&nbsp;' + '<i class="wi ' + currentWeatherHumidity + '"></i>');
-    $('.weather .sub3').html('Rain mm' + '&nbsp;&nbsp;' + '<i class="wi ' + currentWeatherPrecmm + '"></i>');
- 
-
+    $('.weather .sub1').html('UV' + '&nbsp;&nbsp;' + currentWeatherUv);
+    $('.weather .sub2').html('Humidity' + '&nbsp;&nbsp;' + currentWeatherHumidity);
+    $('.weather .sub3').html('Rain mm' + '&nbsp;&nbsp;' + currentWeatherPrecmm);
     //Populate current date panel ////////////////////////////////////////////////////////////////////////
     //Call current date from browser, format and populate
     var dateObj = new Date();
