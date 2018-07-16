@@ -349,7 +349,7 @@ function populate(response) {
     var month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     var d = dateObj.getDay();
     var forecastDay = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"];
-    console.log(dateObj);
+   //console.log(dateObj);
     function getForecastDate(num){
       dateObj.setDate(dateObj.getDate() + num);
       monthNum = dateObj.getMonth();
@@ -357,7 +357,7 @@ function populate(response) {
       hour = dateObj.getHours();
       d = dateObj.getDay();
     }
-    console.log(dateObj);
+    //console.log(dateObj);
     $('.date .top').html(forecastDay[d]);
     $('.date .day').html(day);
     $('.main .bottom').html(month[monthNum]);
