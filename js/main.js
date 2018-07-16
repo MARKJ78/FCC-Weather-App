@@ -172,7 +172,9 @@ function populate(response) {
     console.log(response);
     console.log('Data recieved, Populating Page');
     var currentWeatherUv = response.forecast.forecastday[0].day.uv;
-    var currentWeatherHumidity = response.forecast.forecastday[0].day.avghumidity;
+    var currentWeatherHumidity = response.current.humidity; 
+    
+    
     var currentWeatherPrecmm = response.forecast.forecastday[0].day.totalprecip_mm;
     //the following just to use custom icons :/
     //SELECT ICON BASED ON COVERTED TIME BOOLIAN///////////////////////////////////////////////////////
@@ -338,7 +340,7 @@ function populate(response) {
     $('.weather .upper .main').html('<i class="wi ' + currentWeatherIcon + '"></i>');
     $('.weather .sub1').html('UV' + '&nbsp;&nbsp;' + currentWeatherUv);
     $('.weather .sub2').html('Humidity' + '&nbsp;&nbsp;' + currentWeatherHumidity);
-    $('.weather .sub3').html('Rain mm' + '&nbsp;&nbsp;' + currentWeatherPrecmm);
+    $('.weather .sub3').html('Rain' + '&nbsp;&nbsp;' + currentWeatherPrecmm + 'mm');
     //Populate current date panel ////////////////////////////////////////////////////////////////////////
     //Call current date from browser, format and populate
     var dateObj = new Date();
