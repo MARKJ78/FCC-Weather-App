@@ -171,12 +171,12 @@ $(document).ready(function() {
 function populate(response) {
     console.log(response);
     console.log('Data recieved, Populating Page');
+    var currentWeatherUv = response.forecast.forecastday[0].day.uv;
+    var currentWeatherHumidity = response.forecast.forecastday[0].day.avghumidity;
+    var currentWeatherPrecmm = getIcon(response.forecast.forecastday[0].day.totalprecip_mm;
     //the following just to use custom icons :/
     //SELECT ICON BASED ON COVERTED TIME BOOLIAN///////////////////////////////////////////////////////
     var currentWeatherIcon = getIcon(response.current.condition.code, false);
-    var currentWeatherUv = response.forecast.forecastday[0].day.uv, true;
-    var currentWeatherIcon2 = getIcon(response.forecast.forecastday[0].day.condition.code, true);
-    var currentWeatherIcon3 = getIcon(response.forecast.forecastday[0].day.condition.code, false);
     var forecastWeatherIcon1 = getIcon(response.forecast.forecastday[1].day.condition.code, true);
     var forecastWeatherIcon2 = getIcon(response.forecast.forecastday[2].day.condition.code, true);
     var forecastWeatherIcon3 = getIcon(response.forecast.forecastday[3].day.condition.code, true);
@@ -337,8 +337,9 @@ function populate(response) {
     $('.weather .upper .bottom').html(response.current.condition.text);
     $('.weather .upper .main').html('<i class="wi ' + currentWeatherIcon + '"></i>');
     $('.weather .sub1').html('UV' + '&nbsp;&nbsp;' + '<i class="wi ' + currentWeatherUv + '"></i>');
-    $('.weather .sub2').html('2pm' + '&nbsp;&nbsp;' + '<i class="wi ' + currentWeatherIcon2 + '"></i>');
-    $('.weather .sub3').html('8pm' + '&nbsp;&nbsp;' + '<i class="wi ' + currentWeatherIcon3 + '"></i>');
+    $('.weather .sub2').html('Humidity' + '&nbsp;&nbsp;' + '<i class="wi ' + currentWeatherHumidity + '"></i>');
+    $('.weather .sub3').html('Rain mm' + '&nbsp;&nbsp;' + '<i class="wi ' + currentWeatherPrecmm + '"></i>');
+ 
 
     //Populate current date panel ////////////////////////////////////////////////////////////////////////
     //Call current date from browser, format and populate
