@@ -173,10 +173,10 @@ function populate(response) {
     console.log('Data recieved, Populating Page');
     //the following just to use custom icons :/
     //SELECT ICON BASED ON COVERTED TIME BOOLIAN///////////////////////////////////////////////////////
-    /*var currentWeatherIcon = getIcon(response.current.condition.code, false);
-    var currentWeatherIcon1 = getIcon(response.forecast.forecastday[0].hour[8].condition.code, true);
-    var currentWeatherIcon2 = getIcon(response.forecast.forecastday[0].hour[14].condition.code, true);
-    var currentWeatherIcon3 = getIcon(response.forecast.forecastday[0].hour[20].condition.code, false);*/
+    var currentWeatherIcon = getIcon(response.current.condition.code, false);
+    var currentWeatherIcon1 = getIcon(response.forecast.forecastday[0].condition.code, true);
+    var currentWeatherIcon2 = getIcon(response.forecast.forecastday[0].condition.code, true);
+    var currentWeatherIcon3 = getIcon(response.forecast.forecastday[0].condition.code, false);
     var forecastWeatherIcon1 = getIcon(response.forecast.forecastday[1].day.condition.code, true);
     var forecastWeatherIcon2 = getIcon(response.forecast.forecastday[2].day.condition.code, true);
     var forecastWeatherIcon3 = getIcon(response.forecast.forecastday[3].day.condition.code, true);
