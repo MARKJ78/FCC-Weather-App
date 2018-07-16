@@ -174,7 +174,7 @@ function populate(response) {
     //the following just to use custom icons :/
     //SELECT ICON BASED ON COVERTED TIME BOOLIAN///////////////////////////////////////////////////////
     var currentWeatherIcon = getIcon(response.current.condition.code, false);
-    var currentWeatherIcon1 = getIcon(response.forecast.forecastday[0].condition.code, true);
+    var currentWeatherIcon1 = getIcon(response.forecast.forecastday["0"].day.condition.code, true);
     var currentWeatherIcon2 = getIcon(response.forecast.forecastday[0].condition.code, true);
     var currentWeatherIcon3 = getIcon(response.forecast.forecastday[0].condition.code, false);
     var forecastWeatherIcon1 = getIcon(response.forecast.forecastday[1].day.condition.code, true);
