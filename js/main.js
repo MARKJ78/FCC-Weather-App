@@ -14,11 +14,11 @@ $(document).ready(function() {
             'display': 'block'
         });
         $('#more i').toggleClass('wi-rotate-180');
-        //console.log('Show Forecast');
+        console.log('Show Forecast');
     });
     //Locate button
     $('#locate').click(function() {
-        //console.log('Location clicked by user');
+        console.log('Location clicked by user');
         $('#searchTerm').val(''); //clear search term if there is one.
         $('h3, .main, .sub, .forcastSub').fadeOut('fast');
         testDevice(); ////invoke fetch
@@ -30,7 +30,7 @@ $(document).ready(function() {
     //go button search
     $('#search').click(function() {
         var term = $('#searchTerm').val();
-        //console.log('Search for ' + term + ' clicked');
+        console.log('Search for ' + term + ' clicked');
         $('#warning').css({
             'display': 'none'
         });
@@ -49,7 +49,7 @@ $(document).ready(function() {
         });
         if (event.keyCode == 13) {
             if (term !== '') {
-                //console.log('Search for ' + term + ' entered');
+                console.log('Search for ' + term + ' entered');
                 $('h3, .main, .sub, .forcastSub').fadeOut('fast');
                 fetch();
                 $('h3, .main, .sub, .forcastSub').fadeIn('slow');
@@ -70,7 +70,7 @@ $(document).ready(function() {
         var jsonURL = "https://api.apixu.com/v1/forecast.json?key=ca0c16d6a3bf407d9cb223846161809&days=6&q=";
         switch (error.code) {
             case error.PERMISSION_DENIED:
-                //console.log("PERMISSION_DENIED - enable device location services or enable https://");
+                console.log("PERMISSION_DENIED - enable device location services or enable https://");
                 $('#warning').css({
                     'display': 'block'
                 });
@@ -80,7 +80,7 @@ $(document).ready(function() {
                 });
                 break;
             case error.POSITION_UNAVAILABLE:
-                //console.log("POSITION_UNAVAILABLE");
+                console.log("POSITION_UNAVAILABLE");
                 $('#warning').css({
                     'display': 'block'
                 });
@@ -90,7 +90,7 @@ $(document).ready(function() {
                 });
                 break;
             case error.TIMEOUT:
-                //console.log("TIMEOUT");
+                console.log("TIMEOUT");
                 $('#warning').css({
                     'display': 'block'
                 });
@@ -100,7 +100,7 @@ $(document).ready(function() {
                 });
                 break;
             case error.UNKNOWN_ERROR:
-                //console.log("UNKOWN_ERROR");
+                console.log("UNKOWN_ERROR");
                 $('#warning').css({
                     'display': 'block'
                 });
@@ -124,20 +124,20 @@ $(document).ready(function() {
             var accuracy = location.coords.accuracy;
             //build API key
             $.getJSON(jsonURL + lats + "," + longs, function(gotByGeo) {
-                //console.log('Location Found - Fetching Data');
+                console.log('Location Found - Fetching Data');
                 populate(gotByGeo);
             });
         } else {
             $.getJSON(jsonURL + term, function(gotBySearch) {
                 //search error handling
                 if (gotBySearch.hasOwnProperty('error')) {
-                    //console.log('Search for ' + term + ' unsuccessful');
+                    console.log('Search for ' + term + ' unsuccessful');
                     warning.innerHTML = "<p>" + gotBySearch.error.message + "</p>";
                     $('#warning').css({
                         'display': 'block'
                     });
                 } else {
-                    //console.log('Search for ' + term + ' successful. Loading Data');
+                    console.log('Search for ' + term + ' successful. Loading Data');
                     populate(gotBySearch);
                 }
             });
@@ -146,11 +146,11 @@ $(document).ready(function() {
     //check location support, call functions or warn user
     function testDevice() {
         if (navigator.geolocation) {
-            //console.log('Location Requested');
+            console.log('Location Requested');
             navigator.geolocation.getCurrentPosition(fetch, geoError);
         } else {
             var warning = document.getElementById("warning");
-            //console.log('Location unavailable. Either turn on location on your browser/device or ensure you are using https://');
+            console.log('Location unavailable. Either turn on location on your browser/device or ensure you are using https://');
             warning.innerHTML = "<i class='wi wi-small-craft-advisory fa-lg'></i><p>Sorry, Geolocation is not available on your device, so we guessed where you are instead. Use the search box for more accurate results.</p>";
         }
     }
@@ -169,8 +169,8 @@ $(document).ready(function() {
 ///USE DATA FROM API REQUEST TO POPULATE PAGE
 
 function populate(response) {
-    /*//console.log(response);*/
-    //console.log('Data recieved, Populating Page');
+    console.log(response);
+    console.log('Data recieved, Populating Page');
     //the following just to use custom icons :/
     //SELECT ICON BASED ON COVERTED TIME BOOLIAN///////////////////////////////////////////////////////
     var currentWeatherIcon = getIcon(response.current.condition.code, false);
@@ -349,7 +349,7 @@ function populate(response) {
     var month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     var d = dateObj.getDay();
     var forecastDay = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"];
-    //console.log(dateObj);
+    console.log(dateObj);
     function getForecastDate(num){
       dateObj.setDate(dateObj.getDate() + num);
       monthNum = dateObj.getMonth();
@@ -357,7 +357,7 @@ function populate(response) {
       hour = dateObj.getHours();
       d = dateObj.getDay();
     }
-    //console.log(dateObj);
+    console.log(dateObj);
     $('.date .top').html(forecastDay[d]);
     $('.date .day').html(day);
     $('.main .bottom').html(month[monthNum]);
@@ -399,42 +399,42 @@ function populate(response) {
     $('.forecast-title').html("<h3>Next 5 Days" + " for " + response.location.name + "</h3>");
     //PANELS
     getForecastDate(1);
-    //console.log(dateObj);
+    console.log(dateObj);
     $('#1 .fSub1').html('<h3>' + (forecastDay[d]) + "<br/>" + (month[monthNum]) + "<br/>" + [day] + '</h3>');
     $('#1 .fSubIcon').html('<i class="wi ' + forecastWeatherIcon1 + '"></i>');
     $('#1 .fSub2').html(response.forecast.forecastday[1].day.condition.text);
     $('#1 .fSub3').html("<i class='wi wi-thermometer'></i>" + " " + Math.floor(response.forecast.forecastday[1].day.maxtemp_c) + "&#176;C");
     $('#1 .fSub4').html("<i class='wi wi-strong-wind'></i>" + " " + Math.floor(response.forecast.forecastday[1].day.maxwind_mph) + "MPH");
     getForecastDate(1);
-    //console.log(dateObj);
+    console.log(dateObj);
     $('#2 .fSub1').html('<h3>' + (forecastDay[d]) + "<br/>" + (month[monthNum]) + "<br/>" + [day] + '</h3>');
     $('#2 .fSubIcon').html('<i class="wi ' + forecastWeatherIcon2 + '"></i>');
     $('#2 .fSub2').html(response.forecast.forecastday[2].day.condition.text);
     $('#2 .fSub3').html("<i class='wi wi-thermometer'></i>" + " " + Math.floor(response.forecast.forecastday[2].day.maxtemp_c) + "&#176;C");
     $('#2 .fSub4').html("<i class='wi wi-strong-wind'></i>" + " " + Math.floor(response.forecast.forecastday[2].day.maxwind_mph) + "MPH");
     getForecastDate(1);
-    //console.log(dateObj);
+    console.log(dateObj);
     $('#3 .fSub1').html('<h3>' + (forecastDay[d]) + "<br/>" + (month[monthNum]) + "<br/>" + [day] + '</h3>');
     $('#3 .fSubIcon').html('<i class="wi ' + forecastWeatherIcon3 + '"></i>');
     $('#3 .fSub2').html(response.forecast.forecastday[3].day.condition.text);
     $('#3 .fSub3').html("<i class='wi wi-thermometer'></i>" + " " + Math.floor(response.forecast.forecastday[3].day.maxtemp_c) + "&#176;C");
     $('#3 .fSub4').html("<i class='wi wi-strong-wind'></i>" + " " + Math.floor(response.forecast.forecastday[3].day.maxwind_mph) + "MPH");
     getForecastDate(1);
-    //console.log(dateObj);
+    console.log(dateObj);
     $('#4 .fSub1').html('<h3>' + (forecastDay[d]) + "<br/>" + (month[monthNum]) + "<br/>" + [day] + '</h3>');
     $('#4 .fSubIcon').html('<i class="wi ' + forecastWeatherIcon4 + '"></i>');
     $('#4 .fSub2').html(response.forecast.forecastday[4].day.condition.text);
     $('#4 .fSub3').html("<i class='wi wi-thermometer'></i>" + " " + Math.floor(response.forecast.forecastday[4].day.maxtemp_c) + "&#176;C");
     $('#4 .fSub4').html("<i class='wi wi-strong-wind'></i>" + " " + Math.floor(response.forecast.forecastday[4].day.maxwind_mph) + "MPH");
     getForecastDate(1);
-    //console.log(dateObj);
+    console.log(dateObj);
     $('#5 .fSub1').html('<h3>' + (forecastDay[d]) + "<br/>" + (month[monthNum]) + "<br/>" + [day] + '</h3>');
     $('#5 .fSubIcon').html('<i class="wi ' + forecastWeatherIcon5 + '"></i>');
     $('#5 .fSub2').html(response.forecast.forecastday[5].day.condition.text);
     $('#5 .fSub3').html("<i class='wi wi-thermometer'></i>" + " " + Math.floor(response.forecast.forecastday[5].day.maxtemp_c) + "&#176;C");
     $('#5 .fSub4').html("<i class='wi wi-strong-wind'></i>" + " " + Math.floor(response.forecast.forecastday[5].day.maxwind_mph) + "MPH");
     dateObj = new Date();
-    //console.log(dateObj);
+    console.log(dateObj);
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     //                                                                                                  //
     //                                                                                                  //
@@ -449,7 +449,7 @@ function populate(response) {
         var button = document.getElementById("temperature-button");
         if ($('#temp-toggle').hasClass('units-toggle-on')) {
             button.innerHTML = "&#176;C";
-            //console.log('Temperature units set to Celcius');
+            console.log('Temperature units set to Celcius');
             $('.temp .main').html(Math.floor(response.current.temp_c) + '<span class="degs">&#176;C<span>');
             $('.temp .sub1').html("<i class='wi wi-direction-down'></i>" + " " + Math.floor(response.forecast.forecastday[0].day.mintemp_c) + "&#176;C");
             $('.temp .sub2').html("<i class='wi wi-direction-up'></i>" + " " + Math.floor(response.forecast.forecastday[0].day.maxtemp_c) + "&#176;C");
@@ -460,7 +460,7 @@ function populate(response) {
             $('#5 .fSub3').html("<i class='wi wi-thermometer'></i>" + " " + Math.floor(response.forecast.forecastday[5].day.maxtemp_c) + "&#176;C");
         } else {
             button.innerHTML = "&#176;F";
-            //console.log('Temperature units set to fahrenheit');
+            console.log('Temperature units set to fahrenheit');
             $('.temp .main').html(Math.floor(response.current.temp_f) + '<span class="degs">&#176;F<span>');
             $('.temp .sub1').html("<i class='wi wi-direction-down'></i>" + " " + Math.floor(response.forecast.forecastday[0].day.mintemp_f) + "&#176;F");
             $('.temp .sub2').html("<i class='wi wi-direction-up'></i>" + " " + Math.floor(response.forecast.forecastday[0].day.maxtemp_f) + "&#176;F");
@@ -478,7 +478,7 @@ function populate(response) {
         var SPbutton = document.getElementById("speed-button");
         if ($('#speed-toggle').hasClass('units-toggle-on')) {
             SPbutton.innerHTML = "MPH";
-            //console.log('Speed Units set to MPH');
+            console.log('Speed Units set to MPH');
             $('.wind .sub2').html(Math.floor(response.current.wind_mph) + " MPH");
             $('#1 .fSub4').html("<i class='wi wi-strong-wind'></i>" + " " + Math.floor(response.forecast.forecastday[1].day.maxwind_mph) + " MPH");
             $('#2 .fSub4').html("<i class='wi wi-strong-wind'></i>" + " " + Math.floor(response.forecast.forecastday[2].day.maxwind_mph) + " MPH");
@@ -487,7 +487,7 @@ function populate(response) {
             $('#5 .fSub4').html("<i class='wi wi-strong-wind'></i>" + " " + Math.floor(response.forecast.forecastday[5].day.maxwind_mph) + " MPH");
         } else {
             SPbutton.innerHTML = "KPH";
-            //console.log('Speed Units set to KPH');
+            console.log('Speed Units set to KPH');
             $('.wind .sub2').html(Math.floor(response.current.wind_kph) + " KPH");
             $('#1 .fSub4').html("<i class='wi wi-strong-wind'></i>" + " " + Math.floor(response.forecast.forecastday[1].day.maxwind_kph) + " KPH");
             $('#2 .fSub4').html("<i class='wi wi-strong-wind'></i>" + " " + Math.floor(response.forecast.forecastday[2].day.maxwind_kph) + " KPH");
@@ -496,7 +496,7 @@ function populate(response) {
             $('#5 .fSub4').html("<i class='wi wi-strong-wind'></i>" + " " + Math.floor(response.forecast.forecastday[5].day.maxwind_kph) + " KPH");
         }
     });
-    //console.log('Page Populated. Have a nice Day :)');
+    console.log('Page Populated. Have a nice Day :)');
 }
 //ALLOWS CROSS ORIGIN HTTP API VIA HTTPS SITE (Thanks stack overflow)
 /*no longer requred
