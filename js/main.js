@@ -174,7 +174,7 @@ function populate(response) {
     //the following just to use custom icons :/
     //SELECT ICON BASED ON COVERTED TIME BOOLIAN///////////////////////////////////////////////////////
     var currentWeatherIcon = getIcon(response.current.condition.code, false);
-    var currentWeatherIcon1 = getIcon(response.forecast.forecastday[0].day.condition.code, true);
+    var currentWeatherUv = getIcon(response.forecast.forecastday[0].day.uv, true);
     var currentWeatherIcon2 = getIcon(response.forecast.forecastday[0].day.condition.code, true);
     var currentWeatherIcon3 = getIcon(response.forecast.forecastday[0].day.condition.code, false);
     var forecastWeatherIcon1 = getIcon(response.forecast.forecastday[1].day.condition.code, true);
@@ -336,7 +336,7 @@ function populate(response) {
     //Populate Current weather panel//////////////////////////////////////////////////////////////////////
     $('.weather .upper .bottom').html(response.current.condition.text);
     $('.weather .upper .main').html('<i class="wi ' + currentWeatherIcon + '"></i>');
-    $('.weather .sub1').html('8am' + '&nbsp;&nbsp;' + '<i class="wi ' + currentWeatherIcon1 + '"></i>');
+    $('.weather .sub1').html('8am' + '&nbsp;&nbsp;' + '<i class="wi ' + currentWeatherUv + '"></i>');
     $('.weather .sub2').html('2pm' + '&nbsp;&nbsp;' + '<i class="wi ' + currentWeatherIcon2 + '"></i>');
     $('.weather .sub3').html('8pm' + '&nbsp;&nbsp;' + '<i class="wi ' + currentWeatherIcon3 + '"></i>');
 
